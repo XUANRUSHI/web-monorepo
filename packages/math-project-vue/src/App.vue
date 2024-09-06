@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import dayjs from "dayjs"
+import { Person } from '@xuanrushi/tools'
+
+const p = new Person("史轩如", "React");
 </script>
 
 <template>
   <div>
+   <div>{{ dayjs().format("YYYY年MM月DD日 HH:mm:ss") }}</div>
+   <div>{{ p.name }} : {{ p.slogan }}</div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
