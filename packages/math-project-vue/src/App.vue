@@ -2,6 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import dayjs from "dayjs"
 import { Person } from '@xuanrushi/tools'
+import ZhiHuHot from './components/ZhiHuHot.vue';
 
 const p = new Person("史轩如", "React");
 </script>
@@ -17,7 +18,10 @@ const p = new Person("史轩如", "React");
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <!-- <HelloWorld msg="Vite + Vue" /> -->
+  <ZhiHuHot>
+    
+  </ZhiHuHot>
 </template>
 
 <style scoped>
