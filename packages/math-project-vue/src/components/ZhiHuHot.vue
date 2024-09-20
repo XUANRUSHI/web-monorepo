@@ -24,6 +24,9 @@ const toggleHot = (id: number) => {
 }
 
 
+// a>1 ? fetch(''):console.log('')
+
+
 // const a =ref('abcd')
 // const arr=ref(['a','b','c','d'])
 </script>
