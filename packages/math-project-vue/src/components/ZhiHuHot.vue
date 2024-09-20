@@ -32,7 +32,9 @@ const toggleHot = (id: number) => {
 </script>
 
 
-<template>
+<!-- 常规代码写样式 -->
+
+<!-- <template>
   <div class="list">
     <section
       v-for="(item, index) in list"
@@ -55,9 +57,9 @@ const toggleHot = (id: number) => {
       <img :src="item.children[0].thumbnail" alt="">
     </section>
   </div>
-</template>
+</template> -->
 
-<style scoped>
+<!-- <style scoped>
 .list {
   display: flex;
   flex-wrap: wrap;
@@ -119,4 +121,40 @@ p {
 div {
   text-align: left;
 }
-</style>
+</style> -->
+
+
+<!-- 使用unocss写样式 -->
+<template>
+  <div class="list">
+    <section
+      v-for="(item, index) in list"
+      :key="item.id"
+      class="hot mb-5 w-full flex items-center rounded-lg bg-purple-300 px-3 py-3 shadow-md"
+      @click="toggleHot(item.target.id)"
+    >
+      <span class="mr-3 flex items-center">
+
+        <span class="align-middle">{{ index + 1 }}</span>
+      </span>
+      <div class="max-w-[calc(100%-180px)] flex-grow pr-5">
+        <h3 class="overflow-hidden text-ellipsis whitespace-nowrap text-left text-xl">
+          {{ item.target.title }}
+        </h3>
+        <p
+          class="-webkit-line-clamp-3 line-clamp-3 overflow-hidden text-ellipsis text-left text-base text-gray-600 leading-normal"
+        >
+          {{ item.target.excerpt || '无描述' }}
+        </p>
+
+        <div class="text-left text-start">
+          {{ item.detail_text }}
+          <span class="i-carbon-fire text-red-500"> {{ item.detail_text }}</span>
+        </div>
+      </div>
+      <img :src="item.children[0].thumbnail" alt="" class="ml-5 h-auto w-60 rounded-md">
+    </section>
+  </div>
+</template>
+
+
