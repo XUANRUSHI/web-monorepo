@@ -13,13 +13,12 @@
 
 // type ttt={joke:string} & Bobj
 
-interface ConnonResponse<T>{
-    code:number
-    message:string
-    result:T
+interface ConnonResponse<T> {
+  code: number
+  message: string
+  result: T
 }
 
-type DayBefore=ConnonResponse<{
-    latest:string[]
+type DayBefore = ConnonResponse<{
+  latest: string[]
 }>
- 

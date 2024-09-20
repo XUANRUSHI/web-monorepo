@@ -1,28 +1,59 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import dayjs from "dayjs"
 import { Person } from '@xuanrushi/tools'
-import ZhiHuHot from './components/ZhiHuHot.vue';
+import dayjs from 'dayjs'
+import { onMounted } from 'vue'
+import ZhiHuHot from './components/ZhiHuHot.vue'
+import { useDark } from './composables/useDark'
+import 'uno.css'
 
-const p = new Person("史轩如", "React");
+const { enableDarkMode, disableDarkMode, applySavedTheme } = useDark()
+
+onMounted(() => {
+  applySavedTheme()
+})
+
+const p = new Person('史轩如', 'React')
 </script>
 
 <template>
-  <div>
-   <div>{{ dayjs().format("YYYY年MM月DD日 HH:mm:ss") }}</div>
-   <div>{{ p.name }} : {{ p.slogan }}</div>
+  <div class="p-2 dark:bg-red">
+    <div
+      class="m-auto size-100 bg-pink hover:(bg-cyan text-4xl)"
+      transition="-1000"
+      flex
+      content-center
+      items-center
+      justify-center
+    >
+      <button btn>
+        OnClick
+      </button>
+      <div class="i-carbon-logo-github" />
+    </div>
+    <div class="dark:bg-red">
+      <div class="flex justify-center gap-5">
+        <button @click="disableDarkMode">
+          Light
+        </button>
+        <button @click="enableDarkMode">
+          Dark
+        </button>
+      </div>
+    </div>
+    <div>{{ dayjs().format("YYYY年MM月DD日 HH:mm:ss") }}</div>
+    <div>{{ p.name }} : {{ p.slogan }}</div>
     <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
+      <img src="/vite.svg" class="logo" alt="Vite logo">
     </a>
     <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo">
     </a>
+    <TypeDemo />
   </div>
   <!-- <HelloWorld msg="Vite + Vue" /> -->
-  <ZhiHuHot>
-    
-  </ZhiHuHot>
+  <ZhiHuHot />
 </template>
+
 
 <style scoped>
 .logo {

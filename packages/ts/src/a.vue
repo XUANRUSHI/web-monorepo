@@ -1,25 +1,23 @@
-<script lang="ts" setup>
-import {sum} from '../types/sum'
-//hook
-export const use=()=>{
+<!-- <script lang="ts" setup>
+// hook
+export const use = () => {
+  return {
 
-    return{
-
-    }
+  }
 }
 </script>
 
-<template>
-
-</template>
-
 <script lang="ts" setup>
 
 </script>
 
 <template>
+</template>
+
+<template>
 
 </template>
+
 <style lang="less"></style>
 
-vbase
+vbase -->
