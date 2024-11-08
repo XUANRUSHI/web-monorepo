@@ -5,18 +5,33 @@
   "private": true,
   "scripts": {
     "dev": "vite",
+    "pro": "vite --mode pro",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "dependencies": {
+    "@unocss/core": "^0.63.4",
+    "@unocss/preset-icons": "^0.63.4",
+    "@unocss/webpack": "^0.63.4",
     "@xuanrushi/tools": "workspace:^",
-    "vue": "^3.4.37"
+    "mockjs": "^1.1.0",
+    "vue": "^3.4.37",
+    "vue-i18n": "^10.0.4",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.2.1",
+    "@intlify/unplugin-vue-i18n": "^5.2.0",
+    "@types/mockjs": "^1.0.10",
     "@vitejs/plugin-vue": "^5.1.2",
-    "typescript": "catalog:",
-    "vite": "catalog:",
+    "@vue/test-utils": "^2.4.6",
+    "router-view": "^1.1.7",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.3",
+    "vitest": "^2.1.2",
+    "vue-i18n": "^10.0.4",
+    "vue-router": "^4.4.5",
     "vue-tsc": "^2.0.29"
   }
 }
